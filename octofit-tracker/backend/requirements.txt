@@ -1,1 +1,2 @@
-Django>=4.1,<4.2
+# Specify Django version strictly as 4.1
+Django==4.1
