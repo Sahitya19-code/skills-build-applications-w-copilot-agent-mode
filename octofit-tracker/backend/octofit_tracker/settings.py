@@ -75,16 +75,13 @@ WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# Update database settings to use pymongo
+# Update database settings to use djongo
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.dummy',  # Placeholder to disable Django's ORM
+        'ENGINE': 'djongo',
+        'NAME': 'octofit_db',
     }
 }
-
-# MongoDB connection settings
-MONGO_URI = 'mongodb://localhost:27017/'
-MONGO_DB_NAME = 'octofit_db'
 
 
 # Password validation
@@ -128,3 +125,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# MongoDB connection settings
+MONGO_URI = 'mongodb://localhost:27017/'
+MONGO_DB_NAME = 'octofit_db'
