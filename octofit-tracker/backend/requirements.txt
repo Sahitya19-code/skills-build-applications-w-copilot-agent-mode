@@ -1,2 +1,2 @@
-# Remove djongo and add pymongo
+# Replace djongo with pymongo
 pymongo>=3.11.4
