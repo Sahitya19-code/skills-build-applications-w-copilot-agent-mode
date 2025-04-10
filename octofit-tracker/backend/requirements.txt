@@ -1,1 +1,1 @@
-Create the requirements.txt file for the backend with all necessary Python dependencies.
+Django>=3.2,<4.0
