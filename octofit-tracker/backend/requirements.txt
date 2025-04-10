@@ -1,2 +1,2 @@
-# Specify Django version strictly as 4.1
-Django==4.1
+# Remove djongo and add pymongo
+pymongo>=3.11.4
