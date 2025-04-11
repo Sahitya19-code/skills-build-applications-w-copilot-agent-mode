@@ -1,13 +1,17 @@
+import sys
+sys.path.append('/workspaces/skills-build-applications-w-copilot-agent-mode/octofit-tracker/backend')
+
 import os
-import django
-from pymongo import MongoClient
-from octofit_tracker.test_data import test_users, test_teams, test_activities, test_leaderboard, test_workouts
+from django.conf import settings
 
 # Ensure settings are configured
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'octofit_tracker.settings')
+import django
 django.setup()
 
+from pymongo import MongoClient
 from octofit_tracker.models import users_collection, teams_collection, activity_collection, leaderboard_collection, workouts_collection
+from octofit_tracker.test_data import test_users, test_teams, test_activities, test_leaderboard, test_workouts
 
 def populate_database():
     # Clear existing data

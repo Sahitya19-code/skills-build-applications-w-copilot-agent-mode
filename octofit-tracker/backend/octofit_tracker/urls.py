@@ -14,19 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import UserViewSet, TeamViewSet, ActivityViewSet, LeaderboardViewSet, WorkoutViewSet
+from django.urls import path
+from .views import UserView, TeamView, ActivityView, LeaderboardView, WorkoutView
 
-# Create a router and register our viewsets with it.
-router = DefaultRouter()
-router.register(r'users', UserViewSet)
-router.register(r'teams', TeamViewSet)
-router.register(r'activity', ActivityViewSet)
-router.register(r'leaderboard', LeaderboardViewSet)
-router.register(r'workouts', WorkoutViewSet)
-
-# The API URLs are now determined automatically by the router.
 urlpatterns = [
-    path('', include(router.urls)),
+    path('users/', UserView.as_view(), name='users'),
+    path('teams/', TeamView.as_view(), name='teams'),
+    path('activities/', ActivityView.as_view(), name='activities'),
+    path('leaderboard/', LeaderboardView.as_view(), name='leaderboard'),
+    path('workouts/', WorkoutView.as_view(), name='workouts'),
 ]
