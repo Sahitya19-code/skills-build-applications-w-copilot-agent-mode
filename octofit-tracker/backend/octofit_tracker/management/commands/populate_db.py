@@ -1,3 +1,6 @@
+import sys
+sys.path.append('/workspaces/skills-build-applications-w-copilot-agent-mode/octofit-tracker/backend')
+
 import os
 import django
 from pymongo import MongoClient
